@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>سایت درسی دوازدهم تجربی</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Tahoma, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #1e5799 0%, #2989d8 50%, #7db9e8 100%);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .wave {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.3" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+      background-size: cover;
+      background-repeat: no-repeat;
+      animation: wave 8s linear infinite;
+      z-index: 1;
+    }
+
+    .wave2 {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.2" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,213.3C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+      background-size: cover;
+      background-repeat: no-repeat;
+      animation: wave 12s linear infinite reverse;
+      z-index: 2;
+    }
+
+    @keyframes wave {
+      0% { background-position-x: 0; }
+      100% { background-position-x: 1440px; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .subtitle {
+      font-size: 18px;
+      margin-bottom: 40px;
+      opacity: 0.95;
+    }
+
+    /* دو ستون، یکی در میان بالا و پایین */
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* کارت‌های ستون چپ (ستون زوج) */
+    .card:nth-child(odd) {
+      margin-top: 0;
+    }
+
+    /* کارت‌های ستون راست (ستون فرد) - یکی در میان پایین‌تر */
+    .card:nth-child(even) {
+      margin-top: 45px;
+    }
+
+    .card {
+      border-radius: 15px;
+      padding: 20px 15px;
+      text-decoration: none;
+      color: white;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      min-height: 110px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+    }
+
+    .card h2 {
+      font-size: 19px;
+      margin-bottom: 5px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card p {
+      font-size: 12px;
+      opacity: 0.9;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* رنگ‌های مخلوطی کم‌رنگ و پررنگ */
+    .card.bio {
+      background: linear-gradient(135deg, #ff9a9e 0%, #c0392b 100%);
+    }
+    .card.math {
+      background: linear-gradient(135deg, #a1c4fd 0%, #1e3c72 100%);
+    }
+    .card.physic {
+      background: linear-gradient(135deg, #d4a5ff 0%, #6a1b9a 100%);
+    }
+    .card.chem {
+      background: linear-gradient(135deg, #a8e6cf 0%, #2e7d32 100%);
+    }
+    .card.english {
+      background: linear-gradient(135deg, #ffcc80 0%, #e65100 100%);
+    }
+    .card.arabic {
+      background: linear-gradient(135deg, #d7b19d 0%, #5d4037 100%);
+    }
+    .card.dini {
+      background: linear-gradient(135deg, #ffe082 0%, #b8860b 100%);
+    }
+    .card.farsi {
+      background: linear-gradient(135deg, #ffb6d5 0%, #c2185b 100%);
+    }
+    .card.health {
+      background: linear-gradient(135deg, #80deea 0%, #00838f 100%);
+    }
+
+    .footer-card {
+      background: linear-gradient(135deg, #cfd9df 0%, #4a5568 100%);
+      margin-top: 60px;
+      grid-column: 1 / -1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wave"></div>
+  <div class="wave2"></div>
+
+  <div class="container">
+    <h1>دوازدهم تجربی 🎓</h1>
+    <p class="subtitle">درس‌های نهایی رو اینجا مرور کن!</p>
+
+    <div class="cards">
+
+      <a href="zist.html" class="card bio">
+        <h2>زیست‌شناسی 🧬</h2>
+        <p>مولکول‌ها تا رفتار جانوران</p>
+      </a>
+
+      <a href="riazi.html" class="card math">
+        <h2>ریاضی 🔢</h2>
+        <p>حساب، هندسه، آمار</p>
+      </a>
+
+      <a href="fizik.html" class="card physic">
+        <h2>فیزیک ⚛️</h2>
+        <p>حرکت، الکتریسیته، اتم</p>
+      </a>
+
+      <a href="shimi.html" class="card chem">
+        <h2>شیمی 🧪</h2>
+        <p>واکنش‌ها و ترکیبات</p>
+      </a>
+
+      <a href="zaban.html" class="card english">
+        <h2>زبان انگلیسی 🌍</h2>
+        <p>گرامر، لغات، Reading</p>
+      </a>
+
+      <a href="arabi.html" class="card arabic">
+        <h2>عربی 📖</h2>
+        <p>قواعد و ترجمه</p>
+      </a>
+
+      <a href="dini.html" class="card dini">
+        <h2>دین و زندگی 🕌</h2>
+        <p>درس‌های اعتقادی</p>
+      </a>
+
+      <a href="farsi.html" class="card farsi">
+        <h2>فارسی 📚</h2>
+        <p>شعر، نثر، دستور</p>
+      </a>
+
+      <a href="salamat.html" class="card health">
+        <h2>سلامت و بهداشت 💚</h2>
+        <p>تغذیه و سلامت</p>
+      </a>
+
+      <a href="https://t.me/pouyaasad18" target="_blank" class="card footer-card">
+        <h2>تماس با من 📬</h2>
+        <p>@pouyaasad18 در تلگرام</p>
+      </a>
+
+    </div>
+  </div>
+
+</body>
+</html>
