@@ -84,52 +84,33 @@
       line-height: 2;
     }
 
-    .years {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .year-btn {
-      color: white;
-      text-decoration: none;
-      background: rgba(255,215,0,0.1);
-      padding: 20px;
-      border-radius: 15px;
-      display: block;
-      font-size: 18px;
-      transition: 0.3s;
-      border: 2px solid rgba(255,215,0,0.3);
-      text-align: center;
-    }
-
-    .year-btn:hover {
-      background: rgba(255,215,0,0.3);
-      transform: scale(1.05);
-    }
-
     a.btn {
       color: white;
       text-decoration: none;
-      background: rgba(0,0,0,0.3);
-      padding: 15px 30px;
+      background: rgba(255,215,0,0.15);
+      padding: 18px 35px;
       border-radius: 50px;
       display: inline-block;
       margin: 15px 5px;
-      font-size: 18px;
+      font-size: 19px;
       transition: 0.3s;
-      border: 2px solid rgba(255,215,0,0.3);
+      border: 2px solid rgba(255,215,0,0.4);
     }
 
     a.btn:hover {
-      background: rgba(255,215,0,0.2);
+      background: rgba(255,215,0,0.35);
       transform: scale(1.05);
     }
 
     .back {
       margin-top: 40px;
       display: inline-block;
+      background: rgba(0,0,0,0.3);
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .back:hover {
+      background: rgba(255,255,255,0.15);
     }
   </style>
 </head>
@@ -146,22 +127,14 @@
       <h2>درباره این بخش</h2>
       <p>
         اینجا می‌تونی سؤالات کنکور سراسری تجربی از سال ۱۳۹۷ به بعد رو پیدا کنی.
-        برای هر سال، سؤالات و پاسخنامه‌ها در دسترس هستن.
+        همه‌ی سؤالات و پاسخنامه‌ها توی یه فایل جمع‌آوری شدن.
       </p>
     </div>
 
     <div class="card">
-      <h2>📅 انتخاب سال</h2>
-      <div class="years">
-        <a href="#" class="year-btn">کنکور ۹۷</a>
-        <a href="#" class="year-btn">کنکور ۹۸</a>
-        <a href="#" class="year-btn">کنکور ۹۹</a>
-        <a href="#" class="year-btn">کنکور ۱۴۰۰</a>
-        <a href="#" class="year-btn">کنکور ۱۴۰۱</a>
-        <a href="#" class="year-btn">کنکور ۱۴۰۲</a>
-        <a href="#" class="year-btn">کنکور ۱۴۰۳</a>
-        <a href="#" class="year-btn">کنکور ۱۴۰۴</a>
-      </div>
+      <h2>📄 دانلود سؤالات</h2>
+      <p>فایل کامل سؤالات کنکور تجربی (۹۷ به بعد):</p>
+      <a href="#" download class="btn">📥 دانلود فایل سؤالات</a>
     </div>
 
     <a href="index.html" class="btn back">🔙 برگرد به صفحه اصلی</a>
